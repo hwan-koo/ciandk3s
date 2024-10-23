@@ -18,3 +18,11 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
+          volumeMounts:
+        - name: log-volume
+          mountPath: /var/log/edu
+      volumes:
+      - name: log-volume
+        hostPath:
+          path: /logs/hwankoo  # 본인의 namespace로 변경하세요
+          type: DirectoryOrCreate
