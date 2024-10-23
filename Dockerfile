@@ -21,7 +21,7 @@ WORKDIR /app
 COPY --from=builder /app/target/*.jar app.jar
 
 # 로그 디렉토리 생성
-RUN mkdir -p /var/log/edu
-
+RUN mkdir -p /var/log/edu && \
+    chmod 777 /var/log/edu
 # 애플리케이션 실행
 ENTRYPOINT ["java", "-jar", "app.jar"]
