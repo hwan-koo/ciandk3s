@@ -20,5 +20,8 @@ WORKDIR /app
 # 빌드된 jar 파일을 복사
 COPY --from=builder /app/target/*.jar app.jar
 
+# 로그 디렉토리 생성
+RUN mkdir -p /var/log/edu
+
 # 애플리케이션 실행
 ENTRYPOINT ["java", "-jar", "app.jar"]
