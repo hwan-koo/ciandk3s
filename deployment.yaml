@@ -19,6 +19,8 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
+          securityContext:
+            privileged: true
           volumeMounts:
           - name: log-volume
             mountPath: /var/log/edu

@@ -11,7 +11,7 @@
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>/var/log/edu/application.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <!-- 날짜+시간 패턴으로 로그 파일 생성 -->
+            <!-- 날짜+시간 패턴으로 로그 파일 생성, 1 -->
             <fileNamePattern>/var/log/edu/application-%d{yyyy-MM-dd-HH}.log</fileNamePattern>
             <!-- 로그 파일 보관 기간 -->
             <maxHistory>30</maxHistory>
